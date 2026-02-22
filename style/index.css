@@ -224,3 +224,9 @@ button, a {
     display: flex;
     flex-direction: column;
 }
+
+.skip-button {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+}

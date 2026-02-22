@@ -21,6 +21,7 @@ class Tutorial {
     private progress: number;
     private mainContainer: HTMLElement;
     private introContainer: HTMLElement;
+    private skipButton: HTMLButtonElement;
 
     constructor(container: HTMLElement) {
         this.progress = 0;
@@ -28,6 +29,15 @@ class Tutorial {
         this.introContainer = document.createElement("div");
         this.introContainer.classList.add("intro-container");
         this.mainContainer.appendChild(this.introContainer);
+
+        this.skipButton = document.createElement("button");
+        this.skipButton.textContent = "Skip Intro";
+        this.skipButton.classList.add("skip-button");
+        this.skipButton.addEventListener("click", () => {
+            this.skip();
+            this.skipButton.disabled = true; // Disable the skip button after it's clicked
+        });
+        this.introContainer.appendChild(this.skipButton);
 
         console.log("Tutorial Initialized");
     }
@@ -100,6 +110,11 @@ class Tutorial {
         this.introContainer.classList.add("hidden");
         this.mainContainer.removeChild(this.introContainer);
         return Promise.resolve();
+    }
+
+    public async skip() {
+        this.progress = tutorialText.length + introText.length; // Set progress to the end of the tutorial
+        this.skipButton.remove(); // Remove the skip button
     }
 }
 
