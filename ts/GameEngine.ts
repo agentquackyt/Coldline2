@@ -43,7 +43,7 @@ class GameEngine {
         introScreen.classList.add("hidden");
 
         this.mainContainer.classList.remove("hidden");
-        // await TutorialHandler.getInstance().startTutorial(this.mainContainer);
+        await TutorialHandler.getInstance().startTutorial(this.mainContainer);
 
         console.log("Game started!");
         await this.setupGameplay();
