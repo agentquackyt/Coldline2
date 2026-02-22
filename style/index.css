@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle at bottom center,rgb(0, 0, 0), rgb(23, 23, 23));
+    color: #ffffff;
+    display: flex;
+    font-family: "Workbench", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "BLED" 0,
+        "SCAN" 0;
+    
+}
+
+.intro, .game-over, .game-won {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 1.5rem;
+    opacity: 1;
+}
+
+.intro h1, .game-over h1, .game-won h1 {
+    font-size: 8rem;
+    margin-bottom: 0.5rem;
+    color: red;
+    font-family: "Rubik 80s Fade", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.intro h2, .game-over h2, .game-won h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-family: "Rubik 80s Fade", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+button, a {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-family: "Workbench", sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.fade-out {
+    animation: fade-out 500ms ease forwards;
+    animation-delay: 80ms;
+}
+
+.fade-in {
+    animation: fade-in 500ms ease forwards;
+    animation-delay: 80ms;
+}
+
+.hidden {
+    display: none !important;
+    opacity: 0;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    cursor: none;
+}
+
+/* Tutorial */
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.tutorial-line {
+    font-size: 2.3rem;
+    max-width: 50%;
+}
+
+.intro-line {
+    font-size: 2rem;
+    animation: fade-out 1s ease forwards;
+    animation-delay: 25s;
+}
+
+.final-intro-message {
+    font-size: 4rem;
+    color: rgb(255, 53, 53);
+    animation: fade-in .5s ease forwards;
+}
+
+/* gameplay-wrapper */
+.gameplay-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.upper-panel, .lower-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#game-timer {
+    font-size: 3.5rem;
+    color: #ffffff;
+}
+
+.map-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.world-map {
+    border: 2px solid #ffffff;
+    height: auto;
+    width: auto;
+    display: block;
+}
+
+.missile-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.lower-panel .phone {
+    max-width: 550px;
+    width: 100%;
+    height: auto;
+}
+
+
+.game-over,
+.game-won {
+    opacity: 1;
+    transition: 500ms ease;
+}
+.game-over.hidden,
+.game-won.hidden {
+    opacity: 0;
+}
+
+.game-won h1 {
+    color: #1e90ff;
+}
+
+.game-won h2 {
+    color: #1e90ff;
+}
+
+.upper-panel{
+    height: 100%;
+    width: 100%;
+    display: flex;
+} 
+
+.lower-panel {
+    height: fit-content;
+    width: 100%;
+} 
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+}

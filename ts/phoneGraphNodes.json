@@ -1,0 +1,142 @@
+{
+  "nodes": [
+    {
+      "id": "initial",
+      "audioKey": "audio_initial",
+      "text": "Welcome to the Washington-Moskau Hotline. Press 1 to talk to a representative. Press 2 for other options."
+    },
+    {
+      "id": "other_menu",
+      "audioKey": "audio_other_menu",
+      "text": "Other options. Press 1 to learn about how the US protects its citizens. Press 2 to acquire a 6-digit access key. Press 3 to return to the main menu."
+    },
+
+    {
+      "id": "us_protects_menu",
+      "audioKey": "audio_us_protects_menu",
+      "text": "Press 1 to learn about our commands. Press 2 for offensive and defensive strategies. Press 3 for types of missiles. Press 4 to return to the main menu."
+    },
+    {
+      "id": "info_commands",
+      "audioKey": "audio_info_commands",
+      "text": "The United States operates through four major combatant commands: 1 Central Command, 2 European Command, 3 Indo-Pacific Command, and 4 Aerospace Defense Command. Each is responsible for a distinct theater of operations. Press any key to return."
+    },
+    {
+      "id": "info_offense_defense",
+      "audioKey": "audio_info_offense_defense",
+      "text": "The US maintains both offensive and defensive postures. 1 Offensive strategies neutralize threats at the source. 2 Defensive strategies rely on missile shields, early warning radar, and airspace denial systems. Press any key to return."
+    },
+    {
+      "id": "info_missiles",
+      "audioKey": "audio_info_missiles",
+      "text": "Missile threats are categorized by range: Code 81: slow-moving, Code 35: mid-range, and Code 64: intercontinental. Interception is handled by the Aerospace Defense Command. Press any key to return."
+    },
+
+    {
+      "id": "access_key_menu",
+      "audioKey": "audio_access_key_menu",
+      "text": "Acquire a 6-digit access key. Press 1 if you are low ranking. Press 2 if you are high ranking."
+    },
+    {
+      "id": "low_ranking",
+      "audioKey": "audio_low_ranking",
+      "text": "You currently have no access to a code. Returning to menu."
+    },
+    {
+      "id": "high_ranking_role",
+      "audioKey": "audio_high_ranking_role",
+      "text": "What is your function? Press 1 for Secretary of State. Press 2 for Secretary of Defense. Press 3 for President, King, or Chairman."
+    },
+    {
+      "id": "key_type1",
+      "audioKey": "audio_key_type1",
+      "text": "Generating your Type-1 access key. Please note it down carefully."
+    },
+    {
+      "id": "key_type2",
+      "audioKey": "audio_key_type2",
+      "text": "Generating your Type-2 access key. Please note it down carefully."
+    },
+    {
+      "id": "key_type3",
+      "audioKey": "audio_key_type3",
+      "text": "Generating your Type-3 access key. Please note it down carefully. This key grants access to the chairman's direct line."
+    },
+
+    {
+      "id": "urgent_check",
+      "audioKey": "audio_urgent_check",
+      "text": "Is this an urgent matter? Press 1 to talk to the president. Press 2 to talk to a representative."
+    },
+    {
+      "id": "hold_line",
+      "audioKey": "audio_hold_line",
+      "text": "Please hold the line. The next representative will be with you in approximately 15 minutes."
+    },
+    {
+      "id": "enter_6digit_key",
+      "audioKey": "audio_enter_6digit_key",
+      "text": "In order to connect you to the president, please enter your 6-digit access key, then press space to confirm."
+    },
+    {
+      "id": "key_incorrect",
+      "audioKey": "audio_key_incorrect",
+      "text": "Incorrect key. Press 1 to try again. Press 2 to return to main menu."
+    },
+    {
+      "id": "welcome_chairman",
+      "audioKey": "audio_welcome_chairman",
+      "text": "Welcome back, Chairman Lenkov. Is your call of a routine nature? Press any key to continue."
+    },
+    {
+      "id": "call_reason",
+      "audioKey": "audio_call_reason",
+      "text": "merged with welcome_chairman"
+    },
+    {
+      "id": "economic",
+      "audioKey": "audio_economic",
+      "text": "Understood. Our secretary will contact you shortly. Returning to main menu."
+    },
+    {
+      "id": "nuclear_check",
+      "audioKey": "audio_nuclear_check",
+      "text": "Is US soil endangered? Press 1 for no. Press 2 for yes."
+    },
+    {
+      "id": "nuclear_no",
+      "audioKey": "audio_nuclear_no",
+      "text": "We are very sorry to hear that. Sadly we cannot share more information in this case. Returning to main menu."
+    },
+    {
+      "id": "nuclear_yes",
+      "audioKey": "audio_nuclear_yes",
+      "text": "Did you know you can order an interception missile from this menu? Press 1 to enter the interception code. Press 2 to return to main menu."
+    },
+    {
+      "id": "enter_launch_code",
+      "audioKey": "audio_enter_launch_code",
+      "text": "Please enter the interception code now, then press space to confirm."
+    },
+    {
+      "id": "launch_code_wrong",
+      "audioKey": "audio_launch_code_wrong",
+      "text": "Invalid code. Press 1 to try again. Press 2 to return to main menu."
+    },
+    {
+      "id": "launch_confirm",
+      "audioKey": "audio_launch_confirm",
+      "text": "Are you sure? This option can only be used once. Press 1 to abort. Press 2 to confirm launch."
+    },
+    {
+      "id": "launch_abort",
+      "audioKey": "audio_launch_abort",
+      "text": "Launch sequence aborted. Returning to main menu."
+    },
+    {
+      "id": "game_won",
+      "audioKey": "audio_game_won",
+      "text": "Interception missile launched. Target neutralized. Mission complete. Game won."
+    }
+  ]
+}

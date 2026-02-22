@@ -1,0 +1,16 @@
+{
+  "name": "coldline2",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {
+    "dev": "bun run dev.ts",
+    "build": "rm -rf docs && bun build index.html --minify --outdir docs && cp -r images docs/images && cp -r sounds docs/sounds"
+  }
+}
