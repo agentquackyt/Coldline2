@@ -340,7 +340,7 @@ class GameEngine {
 
         setTimeout(() => {
             AudioManager.getInstance().play("nuclear_explosion");
-        }, 5000);
+        }, 3500);
 
         this.mainContainer.classList.add("hidden");
         this.mainContainer.innerHTML = "";
