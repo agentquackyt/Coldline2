@@ -4,7 +4,7 @@ const PhoneGraphKeys = {
     CODES: {
         /**
          * The interception / launch code.
-         * Heard during info_missiles (other_menu → us_protects → info_missiles).
+         * Heard during info_missiles (other_menu  => us_protects  => info_missiles).
          * Entered during enter_launch_code.
          */
         LAUNCH_CODE: "4264",
@@ -17,13 +17,13 @@ const PhoneGraphKeys = {
         // Other-options branch
         OTHER_MENU:           "other_menu",
 
-        // Info sub-branch (other_menu → 1)
+        // Info sub-branch (other_menu => 1)
         US_PROTECTS_MENU:     "us_protects_menu",
         INFO_COMMANDS:        "info_commands",
         INFO_OFFENSE_DEFENSE: "info_offense_defense",
         INFO_MISSILES:        "info_missiles",   // ← launch code revealed here
 
-        // Access-key sub-branch (other_menu → 2)
+        // Access-key sub-branch (other_menu  => 2)
         ACCESS_KEY_MENU:      "access_key_menu",
         LOW_RANKING:          "low_ranking",
         HIGH_RANKING_ROLE:    "high_ranking_role",
@@ -31,11 +31,11 @@ const PhoneGraphKeys = {
         KEY_TYPE2:            "key_type2",
         KEY_TYPE3:            "key_type3",       // ← type-3 key generated here
 
-        // Representative branch (initial → 1)
+        // Representative branch (initial  => 1)
         URGENT_CHECK:         "urgent_check",
         HOLD_LINE:            "hold_line",
 
-        // Chairman sub-branch (urgent → 1 → correct key)
+        // Chairman sub-branch (urgent  => 1  => correct key)
         ENTER_6DIGIT_KEY:     "enter_6digit_key",
         KEY_INCORRECT:        "key_incorrect",
         WELCOME_CHAIRMAN:     "welcome_chairman",   // absorbs call_reason — one node, two choices

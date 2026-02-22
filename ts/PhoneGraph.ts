@@ -86,7 +86,7 @@ class PhoneGraph {
     private codeBuffer: string = "";
 
     /**
-     * The type-3 key generated when the player calls high_ranking_role → key_type3.
+     * The type-3 key generated when the player calls high_ranking_role  => key_type3.
      * Stored here so enter_6digit_key can validate against it.
      */
     private type3Key: string = "";
@@ -238,7 +238,7 @@ class PhoneGraph {
 
         console.log(
             `[PhoneGraph] Code check on "${node.id}": ` +
-            `entered="${this.codeBuffer}" expected="${expected}" → ${correct ? "✓" : "✗"}`
+            `entered="${this.codeBuffer}" expected="${expected}"  => ${correct ? "✓" : "✗"}`
         );
 
         this.codeBuffer = "";
@@ -279,8 +279,8 @@ function buildPhoneGraph(): PhoneGraph {
     graph.addNode(
         new GraphNode({ id: N.INITIAL, audioKey: A.INITIAL })
             .connect(
-                { key: 1, nodeId: N.URGENT_CHECK },   // → representative
-                { key: 2, nodeId: N.OTHER_MENU },   // → other options
+                { key: 1, nodeId: N.URGENT_CHECK },   //  => representative
+                { key: 2, nodeId: N.OTHER_MENU },   //  => other options
             )
     );
 
@@ -369,7 +369,7 @@ function buildPhoneGraph(): PhoneGraph {
                 g.setType3Key(key);
                 console.log(`[PhoneGraph] Type-3 key issued to player: ${key}`);
 
-                // The node audio is already playing (started by goTo → playAudio).
+                // The node audio is already playing (started by goTo  => playAudio).
                 // Grab the active element so we can wait for it to finish,
                 // then read the digits aloud before advancing.
                 const audio = AudioManager.getInstance().getActivePhoneAudio();

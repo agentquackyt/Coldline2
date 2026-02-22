@@ -45,7 +45,7 @@ class AudioManager {
 
     /**
      * Phone-graph node audio files, keyed by the audioKey from phoneGraphNodes.json
-     * e.g. "audio_initial" → HTMLAudioElement for ./sounds/phone/audio_initial.mp3
+     * e.g. "audio_initial"  => HTMLAudioElement for ./sounds/phone/audio_initial.mp3
      */
     private phoneSounds: Map<string, HTMLAudioElement> = new Map();
 

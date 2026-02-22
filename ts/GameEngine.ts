@@ -133,7 +133,7 @@ class GameEngine {
     private startMissileAnimation(canvas: HTMLCanvasElement): void {
         this.stopMissileAnimation();
 
-        // Quadratic Bézier: P0 → P1 (control) → P2
+        // Quadratic Bézier: P0  => P1 (control)  => P2
         // Passes through (0.30, 0.25) at t = 0.5
         const P0 = { x: 0.70, y: 0.23 };
         const P2 = { x: 0.06, y: 0.65 };
