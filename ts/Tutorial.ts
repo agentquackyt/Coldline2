@@ -2,7 +2,7 @@ import { AudioManager } from "./AudioManager";
 import { animateText } from "./FancyText";
 
 const tutorialText = [
-    "Control the game using you're keyboard.",
+    "Control the game using your keyboard.",
     "You will need to use the number keys (0-9) and space to confirm",
 ];
 
