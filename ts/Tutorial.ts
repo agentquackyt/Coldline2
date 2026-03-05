@@ -44,7 +44,7 @@ class Tutorial {
 
     public async step() {
         this.progress++;
-        await new Promise(resolve => setTimeout(resolve, 2500)); // Wait for 2 seconds before showing the next line
+        await new Promise(resolve => setTimeout(resolve, 1500)); // Wait for 2 seconds before showing the next line
         const textRolling = AudioManager.getInstance().get("text_rolling");
         // First show the tutorial text, show only one line at a time
 
@@ -54,14 +54,14 @@ class Tutorial {
                 const previousLine = this.introContainer.querySelector(`.tutorial-line-${this.progress - 2}`) as HTMLElement;
                 if (previousLine) {
                     previousLine.classList.add("fade-out");
-                    await new Promise(resolve => setTimeout(resolve, 800)); // Wait for fade-out to complete
+                    await new Promise(resolve => setTimeout(resolve, 400)); // Wait for fade-out to complete
                     previousLine.classList.add("hidden");
                 }
             }
             const lineElement = document.createElement("p");
             lineElement.classList.add(`tutorial-line-${this.progress - 1}`, "tutorial-line");
             this.introContainer.appendChild(lineElement);
-            await animateText(lineElement, tutorialText[this.progress - 1] as string, 2000, textRolling);
+            await animateText(lineElement, tutorialText[this.progress - 1] as string, 800, textRolling);
             return;
         } else if (this.progress === tutorialText.length + 1) {
             // Fade out the last tutorial line
@@ -80,7 +80,7 @@ class Tutorial {
             const lineElement = document.createElement("p");
             lineElement.classList.add(`intro-line-${currentLineIndex}`, "intro-line");
             this.introContainer.appendChild(lineElement);
-            await animateText(lineElement, introText[currentLineIndex] as string, 2000, textRolling);
+            await animateText(lineElement, introText[currentLineIndex] as string, 900, textRolling);
         }
 
         console.log("Tutorial step:", this.progress);
@@ -96,10 +96,10 @@ class Tutorial {
         lineElements.forEach((lineElement, i) => {
             (lineElement as HTMLElement).classList.add("fade-out");
         });
+        AudioManager.getInstance().play("gong");
         await new Promise(resolve => setTimeout(resolve, 500)); // Wait for fade-out to complete
         this.introContainer.innerHTML = ""; // Clear all tutorial lines
 
-        AudioManager.getInstance().play("gong");
         const finalMessageElement = document.createElement("h2");
         finalMessageElement.classList.add("final-intro-message");
         finalMessageElement.textContent = finalIntroMessage;

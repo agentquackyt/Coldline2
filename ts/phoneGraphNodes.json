@@ -89,11 +89,6 @@
       "text": "Welcome back, Chairman Lenkov. Is your call of a routine nature? Press any key to continue."
     },
     {
-      "id": "call_reason",
-      "audioKey": "audio_call_reason",
-      "text": "merged with welcome_chairman"
-    },
-    {
       "id": "economic",
       "audioKey": "audio_economic",
       "text": "Understood. Our secretary will contact you shortly. Returning to main menu."

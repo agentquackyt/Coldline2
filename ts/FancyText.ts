@@ -2,14 +2,14 @@
 const RANDOM_CHARACTERS = "$$0123456789";
 
 
-async function animateText(element: HTMLElement, text: string, durationInMilliseconds: number = 2000, audioElement?: HTMLAudioElement) {
+async function animateText(element: HTMLElement, text: string, durationInMilliseconds: number = 800, audioElement?: HTMLAudioElement) {
     element.textContent = "";
     const delay = durationInMilliseconds / text.length;
-    const delayForRandomCharacters = 70; // Delay for showing random characters
+    const delayForRandomCharacters = 45; // Delay for showing random characters
     // start playing sound effect if enabled
     if (audioElement) {
-        audioElement.play();
         audioElement.loop = true;
+        await audioElement.play().catch(() => {});
     }
 
     for (let i = 0; i < text.length; i++) {

@@ -38,7 +38,7 @@ const PhoneGraphKeys = {
         // Chairman sub-branch (urgent  => 1  => correct key)
         ENTER_6DIGIT_KEY:     "enter_6digit_key",
         KEY_INCORRECT:        "key_incorrect",
-        WELCOME_CHAIRMAN:     "welcome_chairman",   // absorbs call_reason — one node, two choices
+        WELCOME_CHAIRMAN:     "welcome_chairman",
         ECONOMIC:             "economic",
 
         // Nuclear sub-branch

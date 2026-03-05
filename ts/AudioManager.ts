@@ -77,6 +77,7 @@ class AudioManager {
 
         this.loaded = true;
         console.log("[AudioManager] All game sounds loaded.");
+        return Promise.resolve();
     }
 
     /**
@@ -90,9 +91,11 @@ class AudioManager {
     async loadPhoneAudio(audioKeys: string[]): Promise<void> {
         await Promise.all(audioKeys.map((key) => this.loadPhoneSound(key)));
         console.log("[AudioManager] All phone audio loaded.");
+        return Promise.resolve();
     }
 
     private loadSound(id: SoundId, src: string): Promise<void> {
+
         return new Promise<void>((resolve) => {
             const audio = new Audio();
             audio.preload = "auto";
@@ -104,6 +107,7 @@ class AudioManager {
             const onReady = () => {
                 this.sounds.set(id, audio);
                 console.log(`[AudioManager] Loaded: ${id}`);
+                this.updateLoadingScreen(`${id}.mp3`);
                 cleanup();
                 resolve();
             };
@@ -133,6 +137,7 @@ class AudioManager {
             const onReady = () => {
                 this.phoneSounds.set(audioKey, audio);
                 console.log(`[AudioManager] Phone audio loaded: ${audioKey}`);
+                this.updateLoadingScreen(`${audioKey}.mp3`);
                 cleanup();
                 resolve();
             };
@@ -157,14 +162,15 @@ class AudioManager {
 
     play(id: SoundId, loop = false): HTMLAudioElement | undefined {
         const audio = this.sounds.get(id);
+        console.info(`[AudioManager:play] Playing: ${id}`);
         if (!audio) {
-            console.warn(`[AudioManager] Sound not available: ${id}`);
+            console.warn(`[AudioManager:play] Sound not available: ${id}`);
             return undefined;
         }
         audio.loop = loop;
         audio.currentTime = 0;
         audio.play().catch((err) =>
-            console.warn(`[AudioManager] Playback blocked for ${id}:`, err)
+            console.warn(`[AudioManager:play] Playback blocked for ${id}:`, err)
         );
         return audio;
     }
@@ -225,7 +231,7 @@ class AudioManager {
 
     async playKeyCode(keyCode: string): Promise<void> {
         // multiple numbers in keyCode (e.g. "1963") should play sequentially with 500ms pauses in between. 
-        await new Promise((r) => setTimeout(r, 1000));
+        await new Promise((r) => setTimeout(r, 500));
         for (const char of keyCode) {
             const audioSrc = NUMBERS[char];
             if (!audioSrc) {
@@ -250,6 +256,13 @@ class AudioManager {
             await new Promise((r) => setTimeout(r, 500));
         }
         return Promise.resolve();
+    }
+
+    private updateLoadingScreen(file: string): void {
+        const element = document.getElementById("loading-progress");
+        if (element) {
+            element.textContent = `Loaded ${file}`;
+        }
     }
 }
 

@@ -4,13 +4,15 @@
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "shx": "^0.4.0"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "scripts": {
     "dev": "bun run dev.ts",
-    "build": "rm -rf docs && bun build index.html --minify --outdir docs && cp -r images docs/images && cp -r sounds docs/sounds"
+    "build": "rm -rf docs && bun build index.html --minify --outdir docs && cp -r images docs/images && cp -r sounds docs/sounds",
+    "build_only": "bun build index.html --minify --outdir docs"
   }
 }

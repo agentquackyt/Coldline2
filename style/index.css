@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 html,
@@ -22,7 +23,7 @@ body {
     
 }
 
-.intro, .game-over, .game-won {
+.intro, .game-over, .game-won, .game-loading {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,7 +34,7 @@ body {
     opacity: 1;
 }
 
-.intro h1, .game-over h1, .game-won h1 {
+.intro h1, .game-over h1, .game-won h1, .game-loading h1 {
     font-size: 8rem;
     margin-bottom: 0.5rem;
     color: red;
@@ -42,10 +43,15 @@ body {
     font-style: normal;
 }
 
-.intro h2, .game-over h2, .game-won h2 {
+.game-loading h1 {
+    font-size: 3rem;
+    font-family: "Workbench", sans-serif;
+}
+
+.intro h2, .game-over h2, .game-won h2, .game-loading h2 {
     font-size: 2.5rem;
     color: #ffffff;
-    font-family: "Rubik 80s Fade", system-ui;
+    font-family: "Workbench", sans-serif;
     font-weight: 400;
     font-style: normal;
     text-align: center;
@@ -119,6 +125,7 @@ button, a {
     gap: 1rem;
     color: #ffffff;
     text-align: center;
+    cursor: pointer;
 }
 
 .tutorial-line {
@@ -185,9 +192,8 @@ button, a {
 }
 
 .lower-panel .phone {
-    max-width: 550px;
-    width: 100%;
-    height: auto;
+    max-height: 30vh;
+    width: auto;
 }
 
 
@@ -229,4 +235,8 @@ button, a {
     position: fixed;
     bottom: 40px;
     right: 40px;
+}
+
+#loading-progress {
+    margin-top: 3rem;
 }

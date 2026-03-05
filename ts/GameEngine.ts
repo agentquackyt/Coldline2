@@ -35,14 +35,20 @@ class GameEngine {
     }
 
     public async start() {
-        await this.loadAssets();
-
+        const gameLoadingScreen = document.querySelector(".game-loading") as HTMLElement;
         const introScreen = document.querySelector(".intro") as HTMLElement;
         introScreen.classList.add("fade-out");
         await new Promise(resolve => setTimeout(resolve, 700));
         introScreen.classList.add("hidden");
-
         this.mainContainer.classList.remove("hidden");
+        gameLoadingScreen.classList.remove("hidden");
+
+        await this.loadAssets();
+        gameLoadingScreen.classList.add("fade-out");
+        await new Promise(resolve => setTimeout(resolve, 400));
+        gameLoadingScreen.classList.add("hidden");
+
+    
         await TutorialHandler.getInstance().startTutorial(this.mainContainer);
 
         console.log("Game started!");

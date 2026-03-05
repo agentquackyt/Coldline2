@@ -9,7 +9,7 @@ function loadGame() {
         try {
             // request fullscreen mode for the game container
             await setFullscreen();
-            document.getElementById("game-container")?.addEventListener("click", async () => {
+            document.body.addEventListener("click", async () => {
                 await setFullscreen();
             });
             await gameEngine.start();
@@ -33,7 +33,7 @@ function loadGame() {
 
 
 async function setFullscreen() {
-    const gameContainer = document.getElementById("game-container");
+    const gameContainer = document.body;
     if (gameContainer) {
         if (gameContainer.requestFullscreen) {
             await gameContainer.requestFullscreen();
